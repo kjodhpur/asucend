@@ -1,131 +1,123 @@
 ---
 name: asucend
-description: Turns getting involved at ASU into a weekly leveling game with real-event missions and XP. Use whenever an Arizona State University student says they still haven't joined anything, wants campus events that fit their free time, asks for involvement quests, club ideas, ways to meet people at ASU, or a Sunday stats card of their Ascend progress.
+description: Turns getting involved at ASU into comfort-scaled campus missions with real events and XP. Use whenever an Arizona State University student wants to make friends or attend more events, says they are shy, asks to start ASUcend or Ascend, wants missions that fit their free days, reports a completed mission, asks how much XP they have, wants an easier challenge next week, or asks for weekly progress.
 ---
 
-# Ascend (asucend)
+# ASUcend (asucend)
 
-Built for Arizona State University students. Halfway through the semester and they still haven't joined anything — Ascend turns getting involved into a real-world leveling game. Cubbie drops weekly missions from real ASU events; the student levels up by showing up and sending proof.
+Built for Arizona State University students. ASUcend works inside Cubbie — like a new ability. Students do not install another app or visit a website to use it. Cubbie finds real campus events, the student chooses, and a small script only tracks quests and XP.
 
 ## When to use
 
-- "I still haven't joined anything at ASU."
-- "Find me something to do on campus this week."
-- "Give me involvement quests / Ascend missions."
-- "Show my Ascend level / Sunday stats."
+- "Hey Cubbie, I want to make new friends and attend more events at ASU. Help me."
+- "Hey Cubbie, start ASUcend. I'm an ASU student and want my first campus quest."
+- "I want to meet people interested in AI, but I'm shy and only free on Fridays."
+- "Cubbie, show my ASUcend missions."
+- "I completed my networking mission."
+- "How much XP have I earned?"
+- "Give me an easier challenge next week."
+- "Show my weekly progress."
 
 Do not use for study plans, Canvas deadlines, or emailing professors — those are other Skills.
 
-## Memory (setup, once)
+## Who does what
 
-Ask one question at a time. Suggest a default they can accept with "yes". Save answers with Cubbie's memory so later weeks skip setup:
+- **Cubbie** (this Skill's instructions): web search and reading event pages, optional Google Calendar, reminders and scheduled check-ins, memory, reading proof photos, short replies.
+- **Script** (`scripts/xp.py`): quest and XP state only. It does not search the web, touch calendars, or set reminders. Cubbie gathers facts first, then passes track, XP, and quest name into the script.
 
-1. Interests (clubs, sports, career, arts, service, gaming — free text is fine).
-2. Comfort level 1–5 (1 = quiet / solo-friendly, 5 = very outgoing). Suggest 3 if unsure.
-3. Usual free times (e.g. Tue/Thu after 4, weekends).
+## Memory (setup)
+
+Ask one question at a time. Suggest a default they can accept with "yes". Save with Cubbie's memory:
+
+1. Interests (AI, clubs, sports, career, arts, service — free text is fine).
+2. Comfort (shy / small group / ready for mixers). Map to 1–5 if useful; suggest a small workshop when they say shy.
+3. Free days and times (e.g. Fridays only).
 4. ASU campus (Tempe, Downtown Phoenix, West, Polytechnic, Online/remote).
-5. Preferred weekly quest-drop day and time (suggest Sunday 6 pm Arizona time).
+5. Optional: weekly check-in day and time (suggest Sunday 6 pm Arizona time). Create a recurring check-in only after they say yes.
 
-Remember: interests, comfort, free times, campus, quest-drop schedule, XP totals, current week missions, and which quests were skipped or completed.
+Remember interests, comfort, free times, campus, active missions, skips, and that ASUcend is in use.
 
-## Main flow
+## First mission (comfort-scaled)
 
-### 1. Weekly quest drop (scheduled check-in)
+Match the shy / limited-schedule style:
 
-After setup, offer a recurring check-in at the day and time they picked. Create it only after they say yes. Word the check-in so it still makes sense next week: run Ascend, search this week's ASU events, drop 3 missions.
+1. Acknowledge the goal in one short line.
+2. Offer an easy first step: small workshop vs something they can do alone. Prefer free when they ask.
+3. Search the web for a real ASU event that fits interest + free day + comfort. Read the page for day, time, place, and cost.
+4. **Show the event source before they decide** — name, when, where, and the event link on its own line. Suggested XP (e.g. +50) and one track (Networking, Career, Academic, Wellness, or Exploration).
+5. Wait for accept or decline. Do not set reminders or add calendar events until they say yes.
+6. After accept: remember the mission; ask permission for a reminder (e.g. 1 hour before). Create the reminder only after yes. Offer calendar add the same way; if Calendar is not connected, use free times from memory and skip the add, or offer a .ics only if they want it.
 
-When the check-in fires (or when they ask for missions now):
-
-1. Search the web for real ASU events this week that match their interests, campus, and free times. Good starting points: ASU event calendars, Sun Devil Fitness, career services, club/org pages, and college newsletters. Read promising pages for day, time, and place.
-2. If Google Calendar is connected, use free blocks that overlap their usual free times. If Calendar is not connected, use the free times from memory — say so in one short line.
-3. Build exactly 3 missions. Prefer real events. Scale difficulty to comfort level and last week's results (see Adapt).
-4. Text as short plain lines, one mission per message or one short block:
+Example tone:
 
 ```text
-This week's Ascend missions:
-1) [Event name] — [day] [time], [place] · +[XP] [Track]
-2) ...
-3) ...
-Reply 1, 2, or 3 to claim. Or "solo" for a campus exploration quest.
+Let's find an easy first mission! Small workshop, or something solo?
+
+Your first ASUcend mission — free AI workshop Friday that fits your schedule.
+I'll show the source before you decide. +50 XP when you complete it.
+[event link]
+Want a reminder an hour before?
 ```
 
-Each mission needs: event name, day, time, place, XP reward, and one XP track (Networking, Career, Academic, Wellness, or Exploration).
+For a weekly drop later, you may offer up to 3 missions the same way — each with source shown before claim.
 
-### 2. Claim, nudge, calendar
+## Later commands
 
-- When they claim a mission, remember it and set a reminder for 1 hour before the event (text). Create the reminder only after they confirm the time looks right.
-- At the nudge: offer to add the event to Google Calendar. Add it only after they say yes. If Calendar is not connected, offer a .ics file instead, or skip.
-- Never book tickets, RSVP, or message other people without an explicit yes. Cubbie texts only this student.
+| They say | You do |
+| --- | --- |
+| Show my ASUcend missions | List active missions from memory (and script status if useful). Short lines. |
+| I completed my … mission | Confirm with a photo or one concrete detail; then award XP via the script; congratulate in 1–2 lines. |
+| How much XP have I earned? | Run `python3 scripts/xp.py status` (or `--card`) and text a short summary. |
+| Give me an easier challenge next week | Remember softer difficulty; next search favors shorter, closer, lower-social, or solo options. Optionally `python3 scripts/xp.py skip` if they abandoned a quest. |
+| Show my weekly progress | Run status/`--card`; optional one-page image or PDF of level, tracks, quests done; one summary line in the text. |
 
-### 3. Proof and XP
+## Proof and XP
 
-- After the event window, ask for a photo from the event (badge, room, crowd, flyer — anything that shows they were there).
-- Read the photo. If it reasonably matches the event/place/time, award XP with the script below and congratulate in one or two lines (new track total + level if it changed).
-- If the photo is unclear or missing, ask for one more detail (where / what room / who spoke) instead of awarding XP. Do not award on a vague "I went."
+- Prefer a photo from the event; if unclear or missing, ask one more detail instead of awarding XP.
+- After a solid confirm, run the award command below. Tracks: networking, career, academic, wellness, exploration.
+- Never award on a vague "I went" with no detail.
 
-### 4. Adapt every week
+## Adapt
 
-Before picking next week's 3 missions, check memory (or run `python3 scripts/xp.py status`):
+Before the next mission set, check memory or `python3 scripts/xp.py status`:
 
-- After skipped quests: easier — shorter events, closer to campus, lower social load, solo-friendly options.
-- After completed quests: a little harder — slightly bigger events, new orgs, light networking stretch.
-- Always stay within comfort level (1–2 stay mostly solo/small; 4–5 can include mixers and large club meetings).
+- Skipped or "easier next week" → softer missions.
+- Completions stacking → a little more stretch, still inside comfort.
+- Shy / low comfort → small workshops and solo exploration first, not large mixers.
 
-### 5. Sunday stats card
+## Solo / thin calendar
 
-On their preferred weekly drop (or when they ask "Ascend stats"):
+If search finds nothing that fits: offer a solo Exploration quest on their campus (new spot, free resource, short walk + photo). Say the week was thin. Show what you checked in one line when you can.
 
-1. Run `python3 scripts/xp.py status` (or `--card`) for level, XP by track, and quests done.
-2. Make a simple shareable image or one-page PDF (level, five track bars or totals, quests completed this week / all time).
-3. Text the image/PDF with one short summary line. This card is meant to be shareable for votes and views — keep it clean and campus-proud, not spammy.
+## Script (XP and quest state only)
 
-## Solo / fallback missions
-
-When web search finds no good matches for their free times:
-
-- Offer 1–3 solo Exploration quests around their campus: a spot they haven't been, a free campus resource (library floor, tutoring center, career closet, rec center tour), or a short walk with a photo proof at a landmark.
-- Say plainly that the calendar was thin this week.
-
-## Optional script (XP math)
-
-State lives under HOME at `~/.config/asucend/state.json` so it survives Skill updates. Cubbie fetches event context itself; pass awards into the script. Always pass the student's local date with `--today` when awarding (sandbox clock may differ).
-
-From this Skill's folder:
+State: `~/.config/asucend/state.json` under HOME. Always pass `--today` with the student's local date when awarding (sandbox clock may differ).
 
 ```bash
-# Show level, tracks, recent quests
 python3 scripts/xp.py status
-
-# Compact lines for a Sunday card
 python3 scripts/xp.py --card
-
-# Award XP after a confirmed photo (tracks: networking|career|academic|wellness|exploration)
-python3 scripts/xp.py award --track networking --xp 40 --quest "Devils Advocate mixer" --today 2026-10-24
-
-# Record a skip (softens next week's difficulty)
-python3 scripts/xp.py skip --quest "Career fair booth crawl" --today 2026-10-24
-
-# Sample mode (bundled data; does not touch real state)
+python3 scripts/xp.py award --track networking --xp 50 --quest "Free AI Friday workshop" --today 2026-10-24
+python3 scripts/xp.py skip --quest "Large mixer" --today 2026-10-24
 python3 scripts/xp.py --sample status
 ```
 
-No Setup packages required — standard library only.
+No Setup packages — standard library only.
 
 | Exit code | Meaning | What to text |
 | --- | --- | --- |
 | 0 | OK | Use the printed summary |
 | 2 | Bad arguments | Ask again which track / quest |
 | 3 | Unknown track | List the five tracks |
-| 4 | State unreadable | Say progress reset locally; offer to start fresh |
+| 4 | State unreadable | Say progress may have reset; offer to start fresh |
 
 ## Replies
 
-Keep each reply to a few short lines, plain text, no Markdown headings or tables. One idea per message. Put event links on their own line. Lead with the mission or the XP result. Ask one question at a time. Long lists or the Sunday board go in an image or PDF, not a wall of text.
+Short plain text, one idea per message, no Markdown headings or tables. Event links on their own line. Ask one question at a time. Lead with the mission, the source, or the XP result. Get a yes before reminders, calendar adds, bookings, or messaging anyone else. Cubbie texts only this student.
 
 ## When something fails
 
-- Calendar not connected → use free times from setup; offer to connect Calendar later.
-- No matching events → solo campus exploration quests; say the week was thin.
-- Unclear or missing photo → ask one more detail; do not award XP yet.
-- Student outside ASU → say Ascend is built for ASU campuses; offer a one-off exploration list only if they insist.
-- Script fails → tell them XP could not be saved this time; remember the award in memory and retry the script once later.
+- Calendar not connected → use free times from memory; offer to connect later.
+- No matching events → solo campus quest; say the calendar was thin.
+- Unclear proof → one more detail; no XP yet.
+- Not an ASU student → say ASUcend is built for ASU; stop or offer a one-off idea only if they insist.
+- Script fails → say XP did not save; keep the award in memory and retry the script once.
