@@ -77,9 +77,7 @@ On their preferred weekly drop (or when they ask "Ascend stats"):
 
 1. Run `python3 scripts/xp.py status` (or `--card`) for level, XP by track, and quests done.
 2. Make a simple shareable image or one-page PDF (level, five track bars or totals, quests completed this week / all time).
-3. Text the image/PDF with one short summary line. This card is meant to be shareable for votes and views — keep it clean and campus-proud, not spammy. Optionally point them at the public Ascend site for a polished share link:
-   https://asucend.vercel.app
-   (That site is a landing page, not how to install this Skill. Install is always the GitHub repo link.)
+3. Text the image/PDF with one short summary line. This card is meant to be shareable for votes and views — keep it clean and campus-proud, not spammy.
 
 ## Solo / fallback missions
 

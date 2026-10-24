@@ -6,8 +6,6 @@ Cubbie Skill for Arizona State University students. Turns getting involved on ca
 
 https://github.com/kjodhpur/asucend
 
-Shareable landing / demo site (not the Skill install link): https://asucend.vercel.app
-
 ## Team
 
 - Kanha Jodhpurkar — TODO: add school email before hackathon submit
