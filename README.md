@@ -1,49 +1,60 @@
-# ASUcend (asucend)
+# ASUcend — a Cubbie Skill for ASU students
 
-Cubbie Skill for Arizona State University students. Comfort-scaled campus missions from real ASU events, with XP tracked in Cubbie — no extra app.
+An adventurous but gentle real-life RPG inside Cubbie's messaging assistant. ASUcend uses actual ASU events as quests, opt-in calendar planning, comfort-aware difficulty, private XP/medals and optional digital player cards.
 
-**Install in Cubbie only:** text this link (do not treat any website as the install):
+**Install in Cubbie:** send https://github.com/kjodhpur/asucend in a Cubbie conversation, confirm the install, then message:
 
-https://github.com/kjodhpur/asucend
+> Start ASUcend. I'm an ASU student interested in AI, shy, and only free Friday afternoons. Find my first free quest.
 
-## Install
+No separate app, Vercel site, server, remote database, wallet or paid reward integration is required. Cubbie provides browsing, Calendar/Canvas if connected, reminders, memory and message delivery. Python only computes deterministic game state and generates an SVG card.
 
-1. Open your Cubbie conversation.
-2. Send: https://github.com/kjodhpur/asucend
-3. Approve the install when Cubbie asks.
-4. Start with: `Hey Cubbie, start ASUcend. I'm an ASU student and want my first campus quest.`
+## Contents
 
-Cubbie reads `SKILL.md`, uses web search / optional calendar / reminders / memory, and runs `scripts/xp.py` only for quest and XP state.
+- `SKILL.md` — primary Cubbie instructions, event sourcing, consent, game flow and sample commands
+- `scripts/xp.py` — persistent quest ledger, XP, levels, medal unlocks, adaptive hints
+- `scripts/plan.py` — offline ranking of Cubbie-supplied, sourced event candidates against calendar windows
+- `scripts/card.py` — no-generation-credit weekly RPG card (SVG)
+- `assets/sample_candidates.json` — **fictional demo input only**
+- `assets/sample_state.json` — **fictional demo progress only**
+- `tests/test_asucend.py` — local unit and CLI integration tests
 
-## Example later messages
-
-- Cubbie, show my ASUcend missions.
-- I completed my networking mission.
-- How much XP have I earned?
-- Give me an easier challenge next week.
-- Show my weekly progress.
-
-## Team
-
-- Kanha Jodhpurkar — TODO: add school email before hackathon submit
-
-## Local checks
+## Offline smoke tests
 
 ```bash
-python3 scripts/xp.py --sample status
-python3 <path-to-kit>/skills/cubbie-skill-creator/scripts/validate_cubbie_skill.py .
+python3 -m unittest discover -s tests -v
+python3 scripts/plan.py --sample
+python3 scripts/xp.py --sample --today 2026-10-24 --json status
+python3 scripts/card.py --sample --today 2026-10-24 --out /tmp/asucend-demo.svg
 ```
 
-## Pre-submit E2E (real Cubbie)
+## Install and validation checks
 
-Before submitting the hackathon entry, on a real Cubbie account:
+Run the official validator from a separate checkout of the Cubbie hackathon kit:
 
-1. Complete onboarding (interests, comfort, free times, campus).
-2. Receive a real, correctly sourced campus event suggestion (source/link shown before you decide).
-3. Accept or decline an optional reminder (Cubbie asks first).
-4. Record one completed mission and receive XP.
-5. Ask about XP later and confirm progress is still there.
+```bash
+python3 ../cubbie-hackathon-kit/skills/cubbie-skill-creator/scripts/validate_cubbie_skill.py .
+```
 
-## Hackathon
+Push these files to `main` of the **public** repo. In a real Cubbie account, text the repo link, approve install, verify a sourced ASU event, accept the offered quest, opt into or decline a reminder, provide a brief completion reflection, earn XP, then ask for status in a new conversation. Local tests do **not** replace this test.
 
-Cubbie Hackathon Track 1. Site: https://hackathon.cubbie.ai
+ASUcend awards **digital-only** game rewards. Optional generative art is feature-gated: Cubbie must actually support an image-generation ability and the student must request it. Default weekly cards use the local SVG script.
+
+Do not treat example.org demo events as verified ASU listings. Do not submit to the hackathon until the team has reviewed the public entry preview and approved submission.
+
+## Optional personalization (no new app)
+
+A student's favorite **game-world voice** changes only the character-like encouragement in Cubbie's replies. It does **not** translate their actual language, alter assignment text, obscure date/time/links, or impersonate licensed game characters. Keep substantive instructions neutral and accurate.
+
+Voice and visual appearance are **separate** preferences. Any game/fictional atmosphere can inspire an original conversation archetype; cards support six original genre packs (neon, fantasy, retro, anime, cozy, scifi) or a custom hex-color palette. No commercial game artwork is packaged.
+
+Every extra is separately opt-in: XP, storylines, calendar matching, reminders, recurring check-ins, weekly cards, optional image-generation offers, and photo-proof prompts. User can return to plain mode without losing earned XP.
+
+```bash
+python3 scripts/preferences.py show
+python3 scripts/preferences.py voice --mode light --world 'retro platforming game' --archetype 'cheerful adventure guide'
+python3 scripts/preferences.py theme --name retro
+python3 scripts/preferences.py feature --name weekly_cards --enabled 1
+python3 scripts/card.py --sample --today 2026-10-24 --theme retro --out /tmp/asucend-retro.svg
+```
+
+Use `python3 scripts/preferences.py reset-presentation` to turn all extras off while **preserving XP and quest data**. Do not add Cubbie check-ins, calendar events, or messages without the student's consent.

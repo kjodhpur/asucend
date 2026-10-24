@@ -1,55 +1,15 @@
 {
-  "tracks": {
-    "networking": 80,
-    "career": 40,
-    "academic": 25,
-    "wellness": 15,
-    "exploration": 55
-  },
+  "schema_version": 2,
+  "tracks": {"networking": 80, "career": 40, "academic": 25, "wellness": 15, "exploration": 55},
+  "quests": {},
   "quests_done": [
-    {
-      "quest": "Tempe farmers market stroll",
-      "track": "exploration",
-      "xp": 25,
-      "date": "2026-10-12"
-    },
-    {
-      "quest": "Devils Advocate club mixer",
-      "track": "networking",
-      "xp": 40,
-      "date": "2026-10-15"
-    },
-    {
-      "quest": "Career Services resume drop-in",
-      "track": "career",
-      "xp": 40,
-      "date": "2026-10-17"
-    },
-    {
-      "quest": "Hayden Library quiet-floor explore",
-      "track": "academic",
-      "xp": 25,
-      "date": "2026-10-19"
-    },
-    {
-      "quest": "SDFSC yoga open class",
-      "track": "wellness",
-      "xp": 15,
-      "date": "2026-10-20"
-    },
-    {
-      "quest": "Memorial Union org fair booth chat",
-      "track": "networking",
-      "xp": 40,
-      "date": "2026-10-22"
-    }
+    {"id": "legacy-1", "title": "First club workshop", "track": "networking", "xp": 50, "date": "2026-10-19", "difficulty": "standard"},
+    {"id": "legacy-2", "title": "Campus exploration", "track": "exploration", "xp": 25, "date": "2026-10-22", "difficulty": "easy"},
+    {"id": "legacy-3", "title": "Career event", "track": "career", "xp": 40, "date": "2026-10-23", "difficulty": "standard"}
   ],
-  "quests_skipped": [
-    {
-      "quest": "Large Friday night social",
-      "date": "2026-10-10"
-    }
-  ],
-  "comfort": 3,
-  "updated": "2026-10-22T18:00:00Z"
+  "quests_skipped": [],
+  "comfort": 2,
+  "preferences": {"easier_next_week": false},
+  "badges": [{"id":"first-spark","name":"First Spark","rarity":"common","earned_on":"2026-10-19"}],
+  "updated": null
 }
