@@ -96,7 +96,7 @@ def save_state(state: dict, *, sample: bool) -> None:
     path = state_path(sample=False)
     path.parent.mkdir(parents=True, exist_ok=True)
     state = dict(state)
-    state["updated"] = datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+    state["updated"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     path.write_text(json.dumps(state, indent=2) + "\n")
 
 
