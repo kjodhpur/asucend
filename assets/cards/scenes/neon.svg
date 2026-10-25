@@ -1,0 +1,45 @@
+<g id="scene-neon">
+<!-- Neon Runner: original synthwave sunset, skyline and grid. -->
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#0B0620"/><stop offset="0.32" stop-color="#2A0B4A"/><stop offset="0.46" stop-color="#5B1663"/><stop offset="0.6" stop-color="#120A2C"/><stop offset="1" stop-color="#07051A"/>
+  </linearGradient>
+  <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#FFE66D"/><stop offset="0.5" stop-color="#FF8A5B"/><stop offset="1" stop-color="#FF2E97"/>
+  </linearGradient>
+  <linearGradient id="floorfade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <mask id="sunstripes">
+    <rect x="300" y="100" width="480" height="330" fill="#fff"/>
+    <rect x="300" y="318" width="480" height="5" fill="#000"/><rect x="300" y="345" width="480" height="8" fill="#000"/>
+    <rect x="300" y="374" width="480" height="11" fill="#000"/><rect x="300" y="404" width="480" height="14" fill="#000"/>
+  </mask>
+  <mask id="floormask"><rect x="0" y="430" width="1080" height="230" fill="url(#floorfade)"/></mask>
+</defs>
+<rect width="1080" height="1350" rx="44" fill="url(#sky)"/>
+<g fill="#fff">
+  <circle cx="110" cy="150" r="2" opacity="0.8"/><circle cx="210" cy="90" r="1.5" opacity="0.6"/><circle cx="860" cy="120" r="2" opacity="0.8"/>
+  <circle cx="960" cy="210" r="1.5" opacity="0.6"/><circle cx="780" cy="70" r="1.2" opacity="0.5"/><circle cx="160" cy="300" r="1.4" opacity="0.5"/>
+  <circle cx="930" cy="330" r="1.8" opacity="0.7"/><circle cx="300" cy="190" r="1.2" opacity="0.5"/><circle cx="690" cy="160" r="1.4" opacity="0.6"/>
+</g>
+<circle cx="540" cy="300" r="210" fill="#FF3DCB" opacity="0.35" filter="url(#softglow)"/>
+<circle cx="540" cy="300" r="185" fill="url(#sun)" mask="url(#sunstripes)"/>
+<!-- skyline -->
+<g fill="#12082B">
+  <path d="M30 430 V372 H70 V340 H110 V388 H150 V318 H178 V300 H196 V318 H222 V430Z"/>
+  <path d="M222 430 V360 H262 V392 H300 V350 H330 V430Z"/>
+  <path d="M750 430 V352 H790 V384 H822 V330 H850 V312 H866 V330 H894 V430Z"/>
+  <path d="M894 430 V368 H934 V340 H972 V390 H1010 V356 H1050 V430Z"/>
+</g>
+<g fill="#38F9FF" opacity="0.75">
+  <rect x="84" y="352" width="6" height="6"/><rect x="160" y="330" width="6" height="6"/><rect x="160" y="350" width="6" height="6"/><rect x="186" y="314" width="5" height="5"/>
+  <rect x="244" y="372" width="6" height="6"/><rect x="804" y="396" width="6" height="6"/><rect x="836" y="344" width="6" height="6"/><rect x="836" y="364" width="6" height="6"/>
+  <rect x="948" y="352" width="6" height="6"/><rect x="1024" y="370" width="6" height="6"/>
+</g>
+<g fill="#FF3DCB" opacity="0.75"><rect x="120" y="398" width="6" height="6"/><rect x="306" y="364" width="6" height="6"/><rect x="870" y="380" width="6" height="6"/><rect x="984" y="402" width="6" height="6"/></g>
+<!-- grid floor -->
+<line x1="30" y1="430" x2="1050" y2="430" stroke="#FF3DCB" stroke-width="3" filter="url(#glow)"/>
+<g stroke="#FF3DCB" stroke-width="2" mask="url(#floormask)">
+  <path d="M540 430 V660 M480 430 L180 660 M420 430 L-180 660 M360 430 L-540 660 M600 430 L900 660 M660 430 L1260 660 M720 430 L1620 660 M510 430 L360 660 M570 430 L720 660"/>
+  <path d="M0 440 H1080 M0 456 H1080 M0 480 H1080 M0 512 H1080 M0 554 H1080 M0 606 H1080"/>
+</g>
+</g>

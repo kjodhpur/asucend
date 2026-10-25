@@ -1,0 +1,142 @@
+{
+  "schema_version": 3,
+  "segment": "junior",
+  "tracks": {
+    "homework": 125,
+    "reading": 100,
+    "practice": 50,
+    "creativity": 75,
+    "helping": 50
+  },
+  "quests": {},
+  "quests_done": [
+    {
+      "id": "demo-1",
+      "title": "Book report outline",
+      "quest": "Book report outline",
+      "track": "homework",
+      "xp": 50,
+      "date": "2026-10-06",
+      "difficulty": "standard"
+    },
+    {
+      "id": "demo-2",
+      "title": "Read 2 chapters",
+      "quest": "Read 2 chapters",
+      "track": "reading",
+      "xp": 25,
+      "date": "2026-10-08",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-3",
+      "title": "Science poster",
+      "quest": "Science poster",
+      "track": "creativity",
+      "xp": 25,
+      "date": "2026-10-10",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-4",
+      "title": "Fractions practice",
+      "quest": "Fractions practice",
+      "track": "homework",
+      "xp": 25,
+      "date": "2026-10-14",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-5",
+      "title": "Read 2 chapters",
+      "quest": "Read 2 chapters",
+      "track": "reading",
+      "xp": 25,
+      "date": "2026-10-15",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-6",
+      "title": "Soccer drills",
+      "quest": "Soccer drills",
+      "track": "practice",
+      "xp": 50,
+      "date": "2026-10-17",
+      "difficulty": "standard"
+    },
+    {
+      "id": "demo-7",
+      "title": "Help with dinner",
+      "quest": "Help with dinner",
+      "track": "helping",
+      "xp": 25,
+      "date": "2026-10-19",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-8",
+      "title": "Spelling test prep",
+      "quest": "Spelling test prep",
+      "track": "homework",
+      "xp": 25,
+      "date": "2026-10-20",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-9",
+      "title": "Library book",
+      "quest": "Library book",
+      "track": "reading",
+      "xp": 50,
+      "date": "2026-10-21",
+      "difficulty": "standard"
+    },
+    {
+      "id": "demo-10",
+      "title": "Math homework",
+      "quest": "Math homework",
+      "track": "homework",
+      "xp": 25,
+      "date": "2026-10-22",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-11",
+      "title": "Fold laundry",
+      "quest": "Fold laundry",
+      "track": "helping",
+      "xp": 25,
+      "date": "2026-10-23",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-12",
+      "title": "Volcano model",
+      "quest": "Volcano model",
+      "track": "creativity",
+      "xp": 50,
+      "date": "2026-10-24",
+      "difficulty": "standard"
+    }
+  ],
+  "quests_skipped": [],
+  "comfort": 3,
+  "preferences": {
+    "easier_next_week": false
+  },
+  "badges": [
+    {
+      "id": "first-star",
+      "name": "First Star",
+      "rarity": "common",
+      "earned_on": "2026-10-06"
+    },
+    {
+      "id": "bookworm",
+      "name": "Bookworm",
+      "rarity": "rare",
+      "earned_on": "2026-10-21"
+    }
+  ],
+  "updated": null
+}

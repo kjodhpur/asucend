@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="ASUcend {{label}} player card">
+<!-- ASUcend player layout (13+). Theme colours, fonts and the background scene are
+     filled in by scripts/card.py; all text values are escaped there. -->
+<defs>
+  <clipPath id="card-clip"><rect width="1080" height="1350" rx="44"/></clipPath>
+  <linearGradient id="xp" x1="0" x2="1"><stop stop-color="{{c_accent}}"/><stop offset="1" stop-color="{{c_accent2}}"/></linearGradient>
+  <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1"><stop stop-color="{{c_accent}}"/><stop offset="0.5" stop-color="{{c_edge}}"/><stop offset="1" stop-color="{{c_accent2}}"/></linearGradient>
+  <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="18"/></filter>
+  <style>
+    text{font-family:{{font}};fill:{{c_text}}}
+    .eyebrow{font-size:20px;font-weight:700;letter-spacing:5px;fill:{{c_accent}}}
+    .tag{font-size:18px;font-weight:700;letter-spacing:4px;fill:{{c_accent2}}}
+    .title{font-size:66px;font-weight:800;letter-spacing:3px}
+    .lvl{font-size:26px;font-weight:700;letter-spacing:8px;fill:{{c_accent}}}
+    .lvlnum{font-size:128px;font-weight:800}
+    .label{font-size:22px;font-weight:600;letter-spacing:3px;fill:{{c_muted}}}
+    .value{font-size:26px;font-weight:700}
+    .callout{font-size:22px;font-weight:700;letter-spacing:2px;fill:{{c_highlight}}}
+    .chipnum{font-size:58px;font-weight:800}
+    .chiplabel{font-size:17px;font-weight:700;letter-spacing:3px;fill:{{c_muted}}}
+    .panel{fill:{{c_panel}};fill-opacity:0.86;stroke:{{c_edge}};stroke-opacity:0.6;stroke-width:2}
+    .radar-ring{fill:none;stroke:{{c_edge}};stroke-opacity:0.3}
+    .radar-axis{stroke:{{c_edge}};stroke-opacity:0.3}
+    .radar-shape{fill:{{c_accent}};fill-opacity:0.28;stroke:{{c_accent}};stroke-width:3}
+    .radar-dot{fill:{{c_accent}}}
+    .radar-label{font-size:17px;font-weight:700;letter-spacing:2px;fill:{{c_muted}}}
+    .track-name{font-size:22px;font-weight:600}
+    .track-xp{font-size:22px;font-weight:800}
+    .bar-bg{fill:#FFFFFF;fill-opacity:0.08}
+    .medal-frame{stroke-width:4;fill:{{c_panel}}}
+    .medal-glyph{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .medal-name{font-size:16px;font-weight:700;letter-spacing:1px}
+    .medal-locked{fill:{{c_panel}};stroke:{{c_muted}};stroke-opacity:0.45;stroke-width:3;stroke-dasharray:8 7}
+    .medal-locked-text{font-size:34px;font-weight:800;fill:{{c_muted}};fill-opacity:0.45}
+  </style>
+</defs>
+
+<rect width="1080" height="1350" rx="44" fill="{{c_background}}"/>
+<g clip-path="url(#card-clip)">{{scene}}</g>
+
+<!-- frame -->
+<rect x="28" y="28" width="1024" height="1294" rx="36" fill="none" stroke="url(#frame)" stroke-width="5" filter="url(#glow)"/>
+<path d="M60 28 H200 M880 28 H1020 M60 1322 H200 M880 1322 H1020" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+
+<!-- header -->
+<text x="84" y="96" class="eyebrow">ASUCEND / {{eyebrow}}</text>
+<text x="996" y="96" class="tag" text-anchor="end">{{week_label}}</text>
+
+<!-- level crest -->
+<g transform="translate(540 268)">
+  <path d="M0 -122 L106 -61 L106 61 L0 122 L-106 61 L-106 -61Z" fill="{{c_background}}" fill-opacity="0.88" stroke="{{c_accent}}" stroke-width="5" filter="url(#glow)"/>
+  <path d="M0 -104 L90 -52 L90 52 L0 104 L-90 52 L-90 -52Z" fill="none" stroke="{{c_accent2}}" stroke-opacity="0.7" stroke-width="2"/>
+  <text y="-38" class="lvl" text-anchor="middle">LEVEL</text>
+  <text y="74" class="lvlnum" text-anchor="middle" filter="url(#glow)">{{level}}</text>
+</g>
+
+<!-- title -->
+<text x="540" y="518" class="title" text-anchor="middle" fill="#FFFFFF" stroke="{{c_background}}" stroke-width="10" paint-order="stroke" filter="url(#glow)">{{title_upper}}</text>
+
+<!-- xp bar -->
+<text x="120" y="604" class="value">{{level_xp}} <tspan class="label">/ {{level_span}} XP THIS LEVEL</tspan></text>
+<text x="960" y="604" class="callout" text-anchor="end">{{xp_to_next}} XP TO LEVEL {{next_level}}</text>
+<rect x="120" y="622" width="840" height="34" rx="17" fill="{{c_panel}}" stroke="{{c_edge}}" stroke-opacity="0.7" stroke-width="2"/>
+<svg x="124" y="626" width="832" height="26"><rect width="{{xp_pct}}%" height="26" rx="13" fill="url(#xp)"/></svg>
+<text x="120" y="684" class="chiplabel">{{total_xp}} XP EARNED ALL-TIME</text>
+
+<!-- stat chips -->
+<rect x="120" y="700" width="260" height="128" rx="20" class="panel"/>
+<rect x="410" y="700" width="260" height="128" rx="20" class="panel"/>
+<rect x="700" y="700" width="260" height="128" rx="20" class="panel"/>
+<text x="250" y="776" class="chipnum" text-anchor="middle" fill="{{c_accent}}">{{week_count}}</text>
+<text x="250" y="808" class="chiplabel" text-anchor="middle">{{week_label_short}}</text>
+<text x="540" y="776" class="chipnum" text-anchor="middle" fill="{{c_accent2}}">{{lifetime}}</text>
+<text x="540" y="808" class="chiplabel" text-anchor="middle">LIFETIME QUESTS</text>
+<text x="830" y="776" class="chipnum" text-anchor="middle" fill="{{c_highlight}}">{{momentum}}</text>
+<text x="830" y="808" class="chiplabel" text-anchor="middle">{{momentum_label}}</text>
+
+<!-- skill tree -->
+<rect x="90" y="856" width="900" height="262" rx="24" class="panel"/>
+<text x="540" y="900" class="eyebrow">YOUR SKILL TREE</text>
+<g transform="translate(300 1004)">{{radar}}</g>
+<g transform="translate(540 944)">{{track_list}}</g>
+
+<!-- medals -->
+<rect x="90" y="1140" width="900" height="152" rx="24" class="panel"/>
+<text x="120" y="1180" class="eyebrow">MEDAL VAULT</text>
+<g transform="translate(400 1206)">{{medals}}</g>
+
+</svg>

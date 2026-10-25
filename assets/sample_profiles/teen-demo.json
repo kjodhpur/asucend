@@ -1,0 +1,82 @@
+{
+  "schema_version": 3,
+  "segment": "teen",
+  "tracks": {
+    "homework": 200,
+    "reading": 25,
+    "practice": 50,
+    "creativity": 0,
+    "helping": 50
+  },
+  "quests": {},
+  "quests_done": [
+    {
+      "id": "demo-1",
+      "title": "History essay draft",
+      "quest": "History essay draft",
+      "track": "homework",
+      "xp": 75,
+      "date": "2026-10-14",
+      "difficulty": "brave"
+    },
+    {
+      "id": "demo-2",
+      "title": "Volunteer shift",
+      "quest": "Volunteer shift",
+      "track": "helping",
+      "xp": 50,
+      "date": "2026-10-18",
+      "difficulty": "standard"
+    },
+    {
+      "id": "demo-3",
+      "title": "Chem lab write-up",
+      "quest": "Chem lab write-up",
+      "track": "homework",
+      "xp": 50,
+      "date": "2026-10-20",
+      "difficulty": "standard"
+    },
+    {
+      "id": "demo-4",
+      "title": "Guitar practice",
+      "quest": "Guitar practice",
+      "track": "practice",
+      "xp": 50,
+      "date": "2026-10-21",
+      "difficulty": "standard"
+    },
+    {
+      "id": "demo-5",
+      "title": "Read for English",
+      "quest": "Read for English",
+      "track": "reading",
+      "xp": 25,
+      "date": "2026-10-22",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-6",
+      "title": "Algebra problem set",
+      "quest": "Algebra problem set",
+      "track": "homework",
+      "xp": 75,
+      "date": "2026-10-23",
+      "difficulty": "brave"
+    }
+  ],
+  "quests_skipped": [],
+  "comfort": 3,
+  "preferences": {
+    "easier_next_week": false
+  },
+  "badges": [
+    {
+      "id": "first-star",
+      "name": "First Star",
+      "rarity": "common",
+      "earned_on": "2026-10-14"
+    }
+  ],
+  "updated": null
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": 3,
+  "segment": "little",
+  "tracks": {
+    "homework": 60,
+    "reading": 50,
+    "practice": 10,
+    "creativity": 25,
+    "helping": 35
+  },
+  "quests": {},
+  "quests_done": [
+    {
+      "id": "demo-1",
+      "title": "Spelling words",
+      "quest": "Spelling words",
+      "track": "homework",
+      "xp": 25,
+      "date": "2026-10-12",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-2",
+      "title": "Read a picture book",
+      "quest": "Read a picture book",
+      "track": "reading",
+      "xp": 25,
+      "date": "2026-10-15",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-3",
+      "title": "Tidy my room",
+      "quest": "Tidy my room",
+      "track": "helping",
+      "xp": 25,
+      "date": "2026-10-20",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-4",
+      "title": "Math worksheet",
+      "quest": "Math worksheet",
+      "track": "homework",
+      "xp": 10,
+      "date": "2026-10-21",
+      "difficulty": "micro"
+    },
+    {
+      "id": "demo-5",
+      "title": "Draw a dinosaur",
+      "quest": "Draw a dinosaur",
+      "track": "creativity",
+      "xp": 25,
+      "date": "2026-10-22",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-6",
+      "title": "Read with Mom",
+      "quest": "Read with Mom",
+      "track": "reading",
+      "xp": 25,
+      "date": "2026-10-23",
+      "difficulty": "easy"
+    },
+    {
+      "id": "demo-7",
+      "title": "Feed the cat",
+      "quest": "Feed the cat",
+      "track": "helping",
+      "xp": 10,
+      "date": "2026-10-23",
+      "difficulty": "micro"
+    },
+    {
+      "id": "demo-8",
+      "title": "Practice piano",
+      "quest": "Practice piano",
+      "track": "practice",
+      "xp": 10,
+      "date": "2026-10-24",
+      "difficulty": "micro"
+    },
+    {
+      "id": "demo-9",
+      "title": "Homework folder",
+      "quest": "Homework folder",
+      "track": "homework",
+      "xp": 25,
+      "date": "2026-10-24",
+      "difficulty": "easy"
+    }
+  ],
+  "quests_skipped": [],
+  "comfort": 3,
+  "preferences": {
+    "easier_next_week": false
+  },
+  "badges": [
+    {
+      "id": "first-star",
+      "name": "First Star",
+      "rarity": "common",
+      "earned_on": "2026-10-12"
+    }
+  ],
+  "updated": null
+}

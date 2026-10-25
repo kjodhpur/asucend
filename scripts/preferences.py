@@ -7,7 +7,7 @@ import argparse
 import json
 import re
 import sys
-from themes import THEMES, FEATURES, MODES, COLOR, options_for
+from themes import THEMES, SEGMENT_CARDS, FEATURES, MODES, COLOR, options_for
 from xp import GameError, load_state, save_state, write_lock
 
 
@@ -24,7 +24,7 @@ def is_dark(hexvalue):
     return lum<100
 
 def operation(args):
-    state=load_state(args.sample)
+    state=load_state(args.sample,args.profile)
     opts=options_for(state)
     command=args.command or 'show'
     if command=='show':
@@ -38,8 +38,9 @@ def operation(args):
         if args.archetype is not None:opts['voice_archetype']=clean_label(args.archetype,'archetype')
         result={'voice_mode':opts['voice_mode'],'world':opts['world'],'voice_archetype':opts['voice_archetype']}
     elif command=='theme':
-        if args.name not in (*THEMES,'custom'):
-            raise GameError('Choose neon, fantasy, retro, anime, cozy, scifi or custom')
+        allowed=SEGMENT_CARDS[state.get('segment','college')]['themes']
+        if args.name not in allowed:
+            raise GameError('Choose one of: '+', '.join(allowed))
         opts['card_theme']=args.name
         if args.name=='custom':
             for field in ('background','accent','accent2'):
@@ -58,19 +59,20 @@ def operation(args):
     elif command=='reset-presentation':
         # Does not touch XP/quests; preserves older difficulty preference.
         from themes import default_options
-        opts=default_options()
+        opts=default_options(state.get('segment','college'))
         result={'presentation_reset':True,'xp_preserved':True}
     else:
         raise GameError('Unknown command')
     # Preserve older script's adaptive-difficulty preference while updating display options.
     state.setdefault('preferences',{}).update(opts)
-    save_state(state)
+    save_state(state,profile=args.profile)
     return result
 
 
 def parser():
     p=argparse.ArgumentParser(description='ASUcend optional settings')
     p.add_argument('--sample',action='store_true',help='Read demo state without mutations')
+    p.add_argument('--profile',help="Whose settings: 'me' (default) or a child's nickname")
     sub=p.add_subparsers(dest='command')
     sub.add_parser('show')
     v=sub.add_parser('voice',help='Select how Cubbie narrates optional game flavor')

@@ -1,0 +1,12 @@
+<g id="scene-custom">
+<!-- Custom World: student-chosen colours over original orbs and rings. -->
+<g fill="#FFFFFF" opacity="0.8">
+  <circle cx="110" cy="150" r="2"/><circle cx="260" cy="90" r="1.5"/><circle cx="860" cy="120" r="2"/><circle cx="960" cy="230" r="1.5"/><circle cx="160" cy="330" r="1.4"/><circle cx="930" cy="380" r="1.8"/>
+</g>
+<circle cx="540" cy="268" r="210" fill="{{c_accent}}" opacity="0.25" filter="url(#softglow)"/>
+<circle cx="540" cy="268" r="176" fill="{{c_accent2}}" opacity="0.35"/>
+<circle cx="540" cy="268" r="210" fill="none" stroke="{{c_accent}}" stroke-width="3" opacity="0.6" stroke-dasharray="4 12"/>
+<ellipse cx="540" cy="268" rx="320" ry="70" transform="rotate(-12 540 268)" fill="none" stroke="{{c_accent}}" stroke-width="4" opacity="0.45"/>
+<path d="M0 470 C300 420 780 420 1080 470 V1350 H0Z" fill="{{c_panel}}" opacity="0.8"/>
+<path d="M0 470 C300 420 780 420 1080 470" fill="none" stroke="{{c_accent}}" stroke-width="3" opacity="0.7"/>
+</g>

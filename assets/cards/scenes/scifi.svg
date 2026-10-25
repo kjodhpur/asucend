@@ -1,0 +1,35 @@
+<g id="scene-scifi">
+<!-- Starfleet Pathfinder: original ringed planet, nebula and HUD arcs. -->
+<defs>
+  <linearGradient id="sf-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#020A14"/><stop offset="0.45" stop-color="#06203A"/><stop offset="1" stop-color="#030C17"/></linearGradient>
+  <radialGradient id="sf-planet" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#9BE7FF"/><stop offset="0.5" stop-color="#2E7FB8"/><stop offset="1" stop-color="#0E2E57"/></radialGradient>
+  <radialGradient id="sf-neb" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E1A9FF" stop-opacity="0.55"/><stop offset="1" stop-color="#E1A9FF" stop-opacity="0"/></radialGradient>
+  <linearGradient id="sf-moon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A4A66"/><stop offset="1" stop-color="#04121F"/></linearGradient>
+</defs>
+<rect width="1080" height="1350" rx="44" fill="url(#sf-sky)"/>
+<ellipse cx="240" cy="200" rx="300" ry="160" fill="url(#sf-neb)"/>
+<ellipse cx="880" cy="360" rx="260" ry="140" fill="url(#sf-neb)" opacity="0.7"/>
+<g fill="#FFFFFF">
+  <circle cx="90" cy="120" r="2"/><circle cx="180" cy="320" r="1.4"/><circle cx="320" cy="90" r="1.6"/><circle cx="760" cy="70" r="2"/><circle cx="900" cy="150" r="1.4"/>
+  <circle cx="1000" cy="260" r="2"/><circle cx="700" cy="180" r="1.2"/><circle cx="380" cy="420" r="1.4"/><circle cx="960" cy="440" r="1.2"/><circle cx="60" cy="420" r="1.6"/>
+  <circle cx="120" cy="900" r="1.4" opacity="0.5"/><circle cx="980" cy="1000" r="1.6" opacity="0.5"/><circle cx="1010" cy="1280" r="1.4" opacity="0.5"/>
+</g>
+<!-- ringed planet -->
+<ellipse cx="540" cy="268" rx="300" ry="64" transform="rotate(-14 540 268)" fill="none" stroke="#73F9EA" stroke-width="10" opacity="0.45"/>
+<circle cx="540" cy="268" r="170" fill="url(#sf-planet)"/>
+<path d="M392 230 C470 250 610 240 700 210 M380 300 C480 320 620 312 704 288" stroke="#BDEFFF" stroke-width="10" fill="none" opacity="0.25"/>
+<path d="M240 340 A300 64 -14 0 0 840 196" transform="rotate(0)" fill="none" stroke="#73F9EA" stroke-width="10" opacity="0.8"/>
+<!-- HUD arcs -->
+<g fill="none" stroke="#73F9EA" stroke-width="2" opacity="0.6">
+  <path d="M310 120 A270 270 0 0 1 430 40"/><path d="M770 120 A270 270 0 0 0 650 40"/>
+  <path d="M60 60 H160 M60 60 V140 M1020 60 H920 M1020 60 V140"/>
+</g>
+<!-- small moon horizon -->
+<path d="M0 480 C300 420 780 420 1080 480 V640 H0Z" fill="url(#sf-moon)"/>
+<path d="M0 480 C300 420 780 420 1080 480" fill="none" stroke="#73F9EA" stroke-width="3" opacity="0.6"/>
+<g fill="#04121F" opacity="0.5"><ellipse cx="220" cy="490" rx="40" ry="10"/><ellipse cx="760" cy="476" rx="56" ry="12"/><ellipse cx="560" cy="520" rx="30" ry="7"/></g>
+<!-- station -->
+<g transform="translate(900 120) rotate(18)" fill="#A7CCD8">
+  <rect x="-40" y="-4" width="80" height="8"/><rect x="-8" y="-20" width="16" height="40" rx="4"/><rect x="-62" y="-14" width="22" height="28" fill="#47CFDC" opacity="0.7"/><rect x="40" y="-14" width="22" height="28" fill="#47CFDC" opacity="0.7"/>
+</g>
+</g>

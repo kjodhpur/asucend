@@ -1,0 +1,35 @@
+<g id="scene-anime">
+<!-- Anime Adventure: original sunset sunburst, clouds and blossom petals. -->
+<defs>
+  <linearGradient id="an-sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#2B1B5C"/><stop offset="0.22" stop-color="#7B3FA0"/><stop offset="0.36" stop-color="#F07AB8"/><stop offset="0.44" stop-color="#FFC59E"/><stop offset="0.52" stop-color="#2A1C4E"/><stop offset="1" stop-color="#1D1433"/>
+  </linearGradient>
+  <radialGradient id="an-sun" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFF7E6"/><stop offset="0.6" stop-color="#FFD7A8"/><stop offset="1" stop-color="#FF9EC7"/></radialGradient>
+</defs>
+<rect width="1080" height="1350" rx="44" fill="url(#an-sky)"/>
+<!-- sunburst rays -->
+<g fill="#FFFFFF" opacity="0.13">
+  <path d="M540 268 L470 -40 L610 -40Z"/><path d="M540 268 L760 -40 L900 20Z"/><path d="M540 268 L1080 40 L1080 180Z"/><path d="M540 268 L1080 330 L1080 440Z"/>
+  <path d="M540 268 L320 -40 L180 20Z"/><path d="M540 268 L0 40 L0 180Z"/><path d="M540 268 L0 330 L0 440Z"/>
+</g>
+<circle cx="540" cy="268" r="190" fill="#FFD7A8" opacity="0.5" filter="url(#softglow)"/>
+<circle cx="540" cy="268" r="160" fill="url(#an-sun)"/>
+<!-- clouds -->
+<g fill="#FFF0F7">
+  <path d="M0 470 C30 410 110 400 150 430 C180 380 270 380 300 430 C340 400 420 420 430 470Z"/>
+  <path d="M640 470 C660 420 740 410 770 440 C800 390 900 390 930 440 C970 410 1060 420 1080 450 V470Z"/>
+</g>
+<g fill="#FFC9E3"><path d="M0 470 C60 440 140 450 200 470Z M760 470 C840 445 960 445 1080 465 V470Z"/></g>
+<path d="M0 470 H1080 V620 H0Z" fill="#2A1C4E"/>
+<path d="M0 470 C200 490 400 480 540 470 C700 460 900 470 1080 490 V520 H0Z" fill="#3B2768"/>
+<!-- petals -->
+<g fill="#FF9EC7">
+  <ellipse cx="120" cy="230" rx="12" ry="6" transform="rotate(-30 120 230)"/><ellipse cx="230" cy="120" rx="10" ry="5" transform="rotate(20 230 120)"/>
+  <ellipse cx="860" cy="180" rx="12" ry="6" transform="rotate(35 860 180)"/><ellipse cx="960" cy="330" rx="10" ry="5" transform="rotate(-15 960 330)"/>
+  <ellipse cx="780" cy="400" rx="9" ry="4.5" transform="rotate(50 780 400)"/><ellipse cx="300" cy="360" rx="9" ry="4.5" transform="rotate(-40 300 360)"/>
+</g>
+<g fill="#FFC9E3" opacity="0.5">
+  <ellipse cx="60" cy="1000" rx="10" ry="5" transform="rotate(-20 60 1000)"/><ellipse cx="1010" cy="880" rx="10" ry="5" transform="rotate(30 1010 880)"/><ellipse cx="1000" cy="1300" rx="9" ry="4.5"/>
+</g>
+<g fill="#FFFFFF"><path d="M200 300 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4Z"/><path d="M880 260 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3Z"/></g>
+</g>

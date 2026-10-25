@@ -1,60 +1,65 @@
-# ASUcend — a Cubbie Skill for ASU students
+# ASUcend: a Cubbie Skill for ASU students
 
-An adventurous but gentle real-life RPG inside Cubbie's messaging assistant. ASUcend uses actual ASU events as quests, opt-in calendar planning, comfort-aware difficulty, private XP/medals and optional digital player cards.
+ASUcend turns ASU campus life into a gentle, real-world RPG inside Cubbie's messages. Real, verified ASU events become quests. Students opt in to XP, medals, a game-style voice and themed weekly player cards. Student parents, older siblings and tutors can also run separate, parent-confirmed homework quests for a child (ages 6-17), with reward cards designed for each age group.
 
-**Install in Cubbie:** send https://github.com/kjodhpur/asucend in a Cubbie conversation, confirm the install, then message:
+**Install in Cubbie:** text https://github.com/kjodhpur/asucend to Cubbie, approve the install, then send:
 
 > Start ASUcend. I'm an ASU student interested in AI, shy, and only free Friday afternoons. Find my first free quest.
 
-No separate app, Vercel site, server, remote database, wallet or paid reward integration is required. Cubbie provides browsing, Calendar/Canvas if connected, reminders, memory and message delivery. Python only computes deterministic game state and generates an SVG card.
+No app, server, database, wallet or paid rewards. Cubbie handles browsing, Calendar, reminders, memory and messaging; small standard-library Python scripts keep the game state and draw the cards.
 
-## Contents
+## What's inside
 
-- `SKILL.md` — primary Cubbie instructions, event sourcing, consent, game flow and sample commands
-- `scripts/xp.py` — persistent quest ledger, XP, levels, medal unlocks, adaptive hints
-- `scripts/plan.py` — offline ranking of Cubbie-supplied, sourced event candidates against calendar windows
-- `scripts/card.py` — no-generation-credit weekly RPG card (SVG)
-- `assets/sample_candidates.json` — **fictional demo input only**
-- `assets/sample_state.json` — **fictional demo progress only**
-- `tests/test_asucend.py` — local unit and CLI integration tests
+| Path | Purpose |
+| --- | --- |
+| `SKILL.md` | Core instructions Cubbie follows: hard rules, the student quest loop, replies and fallbacks |
+| `references/kids.md` | Parent-run child profiles: setup, tasks, parent confirmation, privacy, deletion |
+| `references/personalization.md` | Opt-in features, game voice, storylines, choosing a theme from a favorite game |
+| `references/cards.md` | Reward card layouts per age group, themes, PNG delivery and fallbacks |
+| `scripts/xp.py` | Quest ledger: profiles, age segments, XP, levels, medals, adaptive difficulty |
+| `scripts/plan.py` | Ranks Cubbie-verified event candidates against free time, cost and comfort |
+| `scripts/card.py` | Renders portrait reward cards (SVG, plus PNG with `--png`) |
+| `scripts/preferences.py`, `scripts/themes.py` | Opt-in features, voice, card themes |
+| `assets/cards/` | Hand-drawn original card layouts and theme scenes |
+| `assets/fonts/` | Open Font License fonts so PNG cards look the same in any sandbox |
+| `assets/sample_*` | **Fictional demo data only** |
+| `tests/` | Unit and command-line integration tests |
 
-## Offline smoke tests
+## Age groups and cards
+
+| Profile | Quests | Card |
+| --- | --- | --- |
+| ASU student (default) | Verified ASU events, solo campus quests | Player card: neon, fantasy, retro, anime, cozy, scifi or custom colours |
+| Teen 13-17 (parent-run) | Homework, study, projects, helping | Player card, same themes |
+| Junior 9-12 (parent-run) | Homework, reading, practice, chores | Quest card: dinos, space, unicorn, robots |
+| Little 6-8 (parent-run) | Homework, reading, chores | Star chart: dinos, space, unicorn, robots |
+
+Child profiles never search events or store links, locations or photos; only a nickname is kept, and XP needs the parent's confirmation.
+
+## Run it locally
 
 ```bash
 python3 -m unittest discover -s tests -v
 python3 scripts/plan.py --sample
 python3 scripts/xp.py --sample --today 2026-10-24 --json status
-python3 scripts/card.py --sample --today 2026-10-24 --out /tmp/asucend-demo.svg
+python3 scripts/card.py --sample --today 2026-10-24 --theme fantasy --out /tmp/asucend-fantasy.svg
+python3 scripts/card.py --sample --profile little-demo --today 2026-10-24 --theme dinos --out /tmp/asucend-little.svg
 ```
 
-## Install and validation checks
+For PNG cards (what iMessage shows inline), install the renderer once and add `--png`:
 
-Run the official validator from a separate checkout of the Cubbie hackathon kit:
+```bash
+python3 -m venv ~/.local/share/venvs/asucend
+~/.local/share/venvs/asucend/bin/pip install resvg-py==0.3.2
+~/.local/share/venvs/asucend/bin/python scripts/card.py --sample --today 2026-10-24 --out /tmp/asucend.svg --png
+```
+
+## Before submitting
 
 ```bash
 python3 ../cubbie-hackathon-kit/skills/cubbie-skill-creator/scripts/validate_cubbie_skill.py .
 ```
 
-Push these files to `main` of the **public** repo. In a real Cubbie account, text the repo link, approve install, verify a sourced ASU event, accept the offered quest, opt into or decline a reminder, provide a brief completion reflection, earn XP, then ask for status in a new conversation. Local tests do **not** replace this test.
+Then push to `main` of the public repo and run the live checks in `TESTING.md` on a real Cubbie account. Local tests don't replace that. Review the public entry preview as a team before submitting.
 
-ASUcend awards **digital-only** game rewards. Optional generative art is feature-gated: Cubbie must actually support an image-generation ability and the student must request it. Default weekly cards use the local SVG script.
-
-Do not treat example.org demo events as verified ASU listings. Do not submit to the hackathon until the team has reviewed the public entry preview and approved submission.
-
-## Optional personalization (no new app)
-
-A student's favorite **game-world voice** changes only the character-like encouragement in Cubbie's replies. It does **not** translate their actual language, alter assignment text, obscure date/time/links, or impersonate licensed game characters. Keep substantive instructions neutral and accurate.
-
-Voice and visual appearance are **separate** preferences. Any game/fictional atmosphere can inspire an original conversation archetype; cards support six original genre packs (neon, fantasy, retro, anime, cozy, scifi) or a custom hex-color palette. No commercial game artwork is packaged.
-
-Every extra is separately opt-in: XP, storylines, calendar matching, reminders, recurring check-ins, weekly cards, optional image-generation offers, and photo-proof prompts. User can return to plain mode without losing earned XP.
-
-```bash
-python3 scripts/preferences.py show
-python3 scripts/preferences.py voice --mode light --world 'retro platforming game' --archetype 'cheerful adventure guide'
-python3 scripts/preferences.py theme --name retro
-python3 scripts/preferences.py feature --name weekly_cards --enabled 1
-python3 scripts/card.py --sample --today 2026-10-24 --theme retro --out /tmp/asucend-retro.svg
-```
-
-Use `python3 scripts/preferences.py reset-presentation` to turn all extras off while **preserving XP and quest data**. Do not add Cubbie check-ins, calendar events, or messages without the student's consent.
+Everything beyond event discovery is opt-in and reversible; `python3 scripts/preferences.py reset-presentation` turns all extras off without losing XP. Game themes are original genre art: no commercial game characters, logos or screens are included.

@@ -1,0 +1,32 @@
+<g id="scene-space">
+<!-- Rocket Crew: original cartoon rocket, planets and moon. -->
+<defs>
+  <linearGradient id="sp-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B1F5E"/><stop offset="0.4" stop-color="#3B2C8F"/><stop offset="1" stop-color="#141A4A"/></linearGradient>
+  <linearGradient id="sp-flame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE66D"/><stop offset="1" stop-color="#FF6FB5"/></linearGradient>
+</defs>
+<rect width="1080" height="1350" rx="44" fill="url(#sp-sky)"/>
+<g fill="#FFFFFF">
+  <circle cx="90" cy="140" r="3"/><circle cx="330" cy="90" r="2.5"/><circle cx="420" cy="200" r="2"/><circle cx="880" cy="320" r="2.5"/><circle cx="1000" cy="230" r="3"/><circle cx="780" cy="90" r="2"/><circle cx="350" cy="400" r="2"/>
+  <path d="M460 120 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4Z"/><path d="M960 380 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4Z"/>
+  <circle cx="60" cy="900" r="2.5" opacity="0.6"/><circle cx="1030" cy="1050" r="2.5" opacity="0.6"/><circle cx="1020" cy="1310" r="2" opacity="0.6"/>
+</g>
+<!-- planets -->
+<g transform="translate(940 150)"><ellipse rx="86" ry="20" fill="none" stroke="#FFD23F" stroke-width="8" transform="rotate(-18)"/><circle r="52" fill="#FF8FA3"/><path d="M-46 -12 C-10 -2 20 -4 48 -16" stroke="#FFB8C6" stroke-width="10" fill="none"/></g>
+<circle cx="390" cy="300" r="28" fill="#5BE0C0"/><circle cx="380" cy="292" r="7" fill="#3CC2A2"/>
+<!-- moon ground -->
+<path d="M0 460 C260 400 820 400 1080 460 V1350 H0Z" fill="#B9BCD9"/>
+<path d="M0 500 C300 450 780 450 1080 500 V1350 H0Z" fill="#9EA2C8"/>
+<g fill="#8A8EB8"><ellipse cx="160" cy="470" rx="46" ry="12"/><ellipse cx="860" cy="470" rx="60" ry="14"/><ellipse cx="500" cy="530" rx="34" ry="9"/></g>
+<!-- rocket mascot -->
+<g transform="translate(640 270) rotate(18)">
+  <path d="M-30 150 C-40 200 -10 230 0 260 C10 230 40 200 30 150Z" fill="url(#sp-flame)"/>
+  <path d="M-56 70 L-110 150 L-50 140Z M56 70 L110 150 L50 140Z" fill="#FF6FB5"/>
+  <path d="M0 -150 C70 -90 76 40 56 150 H-56 C-76 40 -70 -90 0 -150Z" fill="#FFFFFF"/>
+  <path d="M0 -150 C30 -124 48 -94 58 -60 H-58 C-48 -94 -30 -124 0 -150Z" fill="#FF6FB5"/>
+  <circle cy="10" r="38" fill="#5B6CFF" stroke="#C7CCFF" stroke-width="10"/>
+  <circle cx="-6" cy="12" r="16" fill="#FFFFFF"/><circle cx="-4" cy="14" r="7" fill="#1C2050"/>
+  <path d="M-12 30 C-4 38 8 38 14 28" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <rect x="-56" y="130" width="112" height="22" rx="8" fill="#5B6CFF"/>
+  <rect x="-8" y="70" width="16" height="60" rx="8" fill="#FF6FB5"/>
+</g>
+</g>

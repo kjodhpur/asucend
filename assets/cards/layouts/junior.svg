@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="ASUcend {{label}} kids card">
+<!-- ASUcend kids layout (Junior Questers, 9-12). Parent-run profiles only: no links, photos or locations.
+     Theme colours, fonts and scene are filled in by scripts/card.py; text is escaped there. -->
+<defs>
+  <clipPath id="card-clip"><rect width="1080" height="1350" rx="44"/></clipPath>
+  <linearGradient id="xp" x1="0" x2="1"><stop stop-color="{{c_accent}}"/><stop offset="1" stop-color="{{c_accent2}}"/></linearGradient>
+  <filter id="lift" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.22"/></filter>
+  <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="18"/></filter>
+  <style>
+    text{font-family:{{font}};fill:{{c_text}};font-weight:700}
+    .head{font-size:26px;letter-spacing:3px;fill:{{c_accent}};stroke:#FFFFFF;stroke-width:9px;paint-order:stroke;stroke-linejoin:round}
+    .card{fill:#FFFFFF;filter:url(#lift)}
+    .h{font-size:24px;letter-spacing:3px;fill:{{c_accent}}}
+    .lvl{font-size:24px;letter-spacing:3px;fill:{{c_text}}}
+    .lvlnum{font-size:88px;fill:{{c_text}}}
+    .title{font-size:56px;letter-spacing:2px;fill:#FFFFFF}
+    .big{font-size:32px}
+    .callout{font-size:26px;fill:{{c_accent2}}}
+    .muted{font-size:20px;fill:{{c_muted}}}
+    .quest{font-size:28px}
+    .quest-xp{font-size:24px;fill:{{c_accent}}}
+    .check{fill:{{c_accent}}}
+    .track-name{font-size:26px}
+    .track-xp{font-size:26px}
+    .bar-bg{fill:#EEF0F7}
+    .medal-glyph{fill:none;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
+    .medal-name{font-size:17px;fill:{{c_text}}}
+    .medal-locked{fill:#F3F4F9;stroke:#C9CCDA;stroke-width:4;stroke-dasharray:9 7}
+    .medal-locked-text{font-size:36px;fill:#C9CCDA}
+    .star-on{fill:{{c_highlight}};stroke:#FFFFFF;stroke-width:1.4;stroke-linejoin:round;filter:url(#lift)}
+    .star-off{fill:#F1F2F8;stroke:#D3D6E4;stroke-width:0.9;stroke-dasharray:3 2;stroke-linejoin:round}
+    .path-line{stroke:#E3E5EF;stroke-width:12;stroke-linecap:round}
+    .dot-on{fill:{{c_accent2}};stroke:#FFFFFF;stroke-width:6}
+    .dot-off{fill:#F1F2F8;stroke:#D3D6E4;stroke-width:4}
+  </style>
+</defs>
+
+<rect width="1080" height="1350" rx="44" fill="{{c_background}}"/>
+<g clip-path="url(#card-clip)">{{scene}}</g>
+
+<!-- frame -->
+<rect x="16" y="16" width="1048" height="1318" rx="38" fill="none" stroke="#FFFFFF" stroke-width="12"/>
+<rect x="30" y="30" width="1020" height="1290" rx="28" fill="none" stroke="{{c_accent}}" stroke-width="4" stroke-opacity="0.8"/>
+
+<!-- header -->
+<text x="68" y="92" class="head">{{eyebrow}}</text>
+<text x="1012" y="92" class="head" text-anchor="end">{{week_label}}</text>
+
+<!-- level badge -->
+<g transform="translate(190 272)" filter="url(#lift)">
+  <circle r="96" fill="{{c_highlight}}" stroke="#FFFFFF" stroke-width="10"/>
+  <circle r="78" fill="none" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="3" stroke-dasharray="6 8"/>
+  <text y="-30" class="lvl" text-anchor="middle">LEVEL</text>
+  <text y="56" class="lvlnum" text-anchor="middle">{{level}}</text>
+</g>
+
+<!-- title ribbon -->
+<path d="M120 488 L70 512 L120 536Z M960 488 L1010 512 L960 536Z" fill="{{c_accent2}}" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/>
+<rect x="120" y="464" width="840" height="96" rx="48" fill="{{c_accent}}" stroke="#FFFFFF" stroke-width="8" filter="url(#lift)"/>
+<text x="540" y="531" class="title" text-anchor="middle">{{title_upper}}</text>
+
+<!-- xp -->
+<rect x="70" y="586" width="940" height="152" rx="32" class="card"/>
+<text x="110" y="638" class="big">{{level_xp}} / {{level_span}} XP</text>
+<text x="970" y="638" class="callout" text-anchor="end">{{xp_to_next}} XP to Level {{next_level}}!</text>
+<rect x="110" y="660" width="860" height="46" rx="23" fill="#EEF0F7"/>
+<svg x="110" y="660" width="860" height="46"><rect width="{{xp_pct}}%" height="46" rx="23" fill="url(#xp)"/><rect x="12" y="8" width="{{xp_pct}}%" height="10" rx="5" fill="#FFFFFF" fill-opacity="0.35"/></svg>
+
+<!-- this week -->
+<rect x="70" y="758" width="940" height="218" rx="32" class="card"/>
+<text x="110" y="806" class="h">THIS WEEK'S QUESTS</text>
+<g transform="translate(110 856)">{{quest_list}}</g>
+
+<!-- skills -->
+<rect x="70" y="996" width="460" height="294" rx="32" class="card"/>
+<text x="104" y="1042" class="h">MY SKILLS</text>
+<g transform="translate(104 1090)">{{track_list}}</g>
+
+<!-- badges -->
+<rect x="550" y="996" width="460" height="294" rx="32" class="card"/>
+<text x="584" y="1042" class="h">MY BADGES</text>
+<g transform="translate(680 1094)">{{medals}}</g>
+</svg>

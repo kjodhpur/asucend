@@ -1,0 +1,31 @@
+<g id="scene-dinos">
+<!-- Dino Valley: original friendly dinosaur, volcano and hills. -->
+<defs>
+  <linearGradient id="di-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7CCBFF"/><stop offset="0.35" stop-color="#CDEFFF"/><stop offset="0.36" stop-color="#6CCB5F"/><stop offset="1" stop-color="#2F7D3B"/></linearGradient>
+</defs>
+<rect width="1080" height="1350" rx="44" fill="url(#di-sky)"/>
+<g fill="#FFFFFF"><path d="M760 140 a30 30 0 0 1 56 -10 a24 24 0 0 1 40 18 a20 20 0 0 1 -4 38 H770 a24 24 0 0 1 -10 -46Z"/><path d="M380 110 a22 22 0 0 1 42 -8 a18 18 0 0 1 30 14 a15 15 0 0 1 -3 28 H388 a18 18 0 0 1 -8 -34Z" opacity="0.9"/></g>
+<!-- volcano -->
+<path d="M820 430 L900 250 H950 L1040 430Z" fill="#8C6A54"/><path d="M900 250 H950 L940 280 L920 270 L905 285Z" fill="#FF7A45"/>
+<g fill="#E8E2DA" opacity="0.9"><circle cx="925" cy="225" r="20"/><circle cx="950" cy="195" r="16"/><circle cx="935" cy="165" r="12"/></g>
+<!-- hills -->
+<path d="M0 470 C120 380 260 380 380 450 C480 400 640 390 760 450 C860 400 980 400 1080 440 V1350 H0Z" fill="#5DBB55"/>
+<path d="M0 520 C200 470 420 480 600 520 C780 560 940 500 1080 510 V1350 H0Z" fill="#4AA64B"/>
+<!-- palm -->
+<g transform="translate(330 300)"><path d="M0 160 C6 100 4 50 12 0" stroke="#8C6A54" stroke-width="12" fill="none" stroke-linecap="round"/>
+<g fill="#2F9E44"><path d="M12 0 C40 -20 80 -10 96 10 C70 0 40 4 12 0Z"/><path d="M12 0 C-16 -24 -60 -18 -76 4 C-50 -6 -20 -2 12 0Z"/><path d="M12 0 C30 -40 64 -54 86 -46 C60 -36 36 -20 12 0Z"/><path d="M12 0 C-4 -40 -36 -58 -60 -54 C-36 -42 -12 -22 12 0Z"/></g></g>
+<!-- dino mascot -->
+<g transform="translate(640 300)">
+  <path d="M90 60 C160 70 210 40 230 10 C220 60 170 110 90 110Z" fill="#3FBF6F"/>
+  <ellipse cx="0" cy="70" rx="120" ry="92" fill="#3FBF6F"/>
+  <ellipse cx="-10" cy="92" rx="72" ry="58" fill="#C9F2A8"/>
+  <g fill="#FF9F43"><path d="M-40 -18 L-24 -48 L-8 -20Z"/><path d="M0 -22 L18 -54 L34 -20Z"/><path d="M42 -12 L62 -40 L74 -4Z"/><path d="M80 10 L104 -12 L108 22Z"/></g>
+  <ellipse cx="-96" cy="-30" rx="78" ry="66" fill="#3FBF6F"/>
+  <circle cx="-120" cy="-46" r="20" fill="#FFFFFF"/><circle cx="-124" cy="-44" r="10" fill="#1E3328"/><circle cx="-127" cy="-48" r="3.5" fill="#FFFFFF"/>
+  <ellipse cx="-150" cy="-10" rx="14" ry="9" fill="#FF8FA3" opacity="0.7"/>
+  <path d="M-160 4 C-140 20 -110 20 -94 8" fill="none" stroke="#1E3328" stroke-width="6" stroke-linecap="round"/>
+  <path d="M-60 40 C-90 60 -100 80 -80 92" fill="none" stroke="#2E9E58" stroke-width="16" stroke-linecap="round"/>
+  <rect x="-70" y="130" width="40" height="44" rx="18" fill="#2E9E58"/><rect x="30" y="130" width="40" height="44" rx="18" fill="#2E9E58"/>
+</g>
+<g fill="#FFD23F"><path d="M500 140 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5Z"/></g>
+</g>

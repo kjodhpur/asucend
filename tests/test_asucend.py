@@ -108,7 +108,8 @@ class GameFlow(unittest.TestCase):
         state=json.loads((self.home/'state.json').read_text())
         self.assertEqual(state['tracks']['networking'],80)
         self.assertEqual(state['quests_done'][0]['quest'],'Original quest')
-        self.assertEqual(state['schema_version'],2)
+        self.assertEqual(state['schema_version'],3)
+        self.assertEqual(state['segment'],'college')
     def test_easy_mode_and_adaptation(self):
         self.x('easier','--on','1')
         self.assertIn('gentler',self.x('recommend')['recommended_difficulty'])
@@ -193,5 +194,19 @@ class Cards(unittest.TestCase):
         ET.fromstring(svg)
         self.assertIn('&lt;unsafe&gt;&amp;',svg)
         self.assertNotIn('<script>',svg)
+    def test_xp_bar_matches_level_progress(self):
+        sys.path.insert(0,str(ROOT/'scripts'))
+        from card import create_svg, level_start
+        from xp import level_for, next_threshold, title_for
+        for xp,pct,label in ((10,20,'10 '),(215,95,'95 '),(410,35,'60 '),(1990,18,'70 '),(2400,20,'80 ')):
+            level=level_for(xp)
+            self.assertLessEqual(level_start(level),xp)
+            self.assertLess(xp,next_threshold(xp))
+            d={'tracks':{t:0 for t in ('networking','career','academic','wellness','exploration')},
+               'level':level,'total_xp':xp,'next_level_at':next_threshold(xp),'title':title_for(level),
+               'completed_this_week':[],'completed_count':0,'momentum_weeks':0,'badges':[]}
+            svg=create_svg(d,{},'neon','2026-10-24')
+            self.assertIn(f'width="{pct}%"',svg)
+            self.assertIn(f'>{label}<tspan',svg)
 
 if __name__=='__main__':unittest.main()
