@@ -1,4 +1,4 @@
-"""ASUcend regression and integration checks. No external accounts/network required."""
+"""asucend regression and integration checks. No external accounts/network required."""
 import importlib.util
 import json
 import os
@@ -180,7 +180,7 @@ class Cards(unittest.TestCase):
             self.assertTrue(result['no_image_generation_used'])
             ET.parse(out)
             data=out.read_text()
-            self.assertIn('ASUCEND',data)
+            self.assertIn('asucend',data)
             self.assertIn('MISSION STATUS',data)
             self.assertNotIn('example.org',data)
     def test_svg_escapes_badge_names(self):

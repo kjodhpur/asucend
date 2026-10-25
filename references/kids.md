@@ -1,6 +1,6 @@
 # Child profiles (ages 6-17), parent-run
 
-Use this file only when the student asks to set up ASUcend for a child: their own child, or a younger sibling or a child they tutor **with the parent's or guardian's permission**. The adult texts Cubbie; the child never does. Cubbie texts only its own student, so every reminder, question and celebration goes to the adult.
+Use this file only when the student asks to set up asucend for a child: their own child, or a younger sibling or a child they tutor **with the parent's or guardian's permission**. The adult texts Cubbie; the child never does. Cubbie texts only its own student, so every reminder, question and celebration goes to the adult.
 
 ## What changes for a child
 
@@ -9,7 +9,7 @@ Use this file only when the student asks to set up ASUcend for a child: their ow
 - **Nickname only.** Store a first name or nickname. Never a surname, school, birthday, photo or address. Ask for the age group, not the exact age.
 - **Learning, not shortcuts.** Cubbie may help the adult explain a concept or plan homework time, but never writes answers to graded work for the child.
 - **No pressure.** No streak guilt and no comparing siblings. Each child's profile is private and separate.
-- **Digital rewards only.** Stars, levels, badges and cards. If the family adds real treats, that's their choice; ASUcend never promises them.
+- **Digital rewards only.** Stars, levels, badges and cards. If the family adds real treats, that's their choice; asucend never promises them.
 
 ## Set up a profile
 

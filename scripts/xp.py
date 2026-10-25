@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ASUcend deterministic quest ledger and digital rewards. Python 3 stdlib only.
+"""asucend deterministic quest ledger and digital rewards. Python 3 stdlib only.
 
 Cubbie discovers/verifies events and confirms quest proof. This script never calls
 Cubbie, fetches websites, reads calendar, verifies a photo, or sends messages.
@@ -358,7 +358,7 @@ def run(args):
         if cmd == 'status':
             if args.json:
                 return snap
-            return (f"ASUcend: L{snap['level']} {snap['title']} · {snap['total_xp']} XP "
+            return (f"asucend: L{snap['level']} {snap['title']} · {snap['total_xp']} XP "
                     f"({snap['xp_to_next']} to next) · {snap['completed_count']} quests done; "
                     f"{len(snap['badges'])} medals; momentum {snap['momentum_weeks']} weeks. "
                     f"Active: {len(snap['active'])}. Next: {snap['difficulty_hint']}")
@@ -466,7 +466,7 @@ def run(args):
 
 
 def build_parser():
-    p = argparse.ArgumentParser(description='ASUcend private quest/XP ledger. Never fetches events or contacts Cubbie.')
+    p = argparse.ArgumentParser(description='asucend private quest/XP ledger. Never fetches events or contacts Cubbie.')
     p.add_argument('--sample', action='store_true', help='Read bundled sample, never modify it')
     p.add_argument('--today', help='Student-local date YYYY-MM-DD (recommended for all commands)')
     p.add_argument('--json', action='store_true', help='JSON output')

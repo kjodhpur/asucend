@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="ASUcend {{label}} kids card">
-<!-- ASUcend kids layout (Little Explorers, 6-8). Parent-run profiles only: no links, photos or locations.
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="asucend {{label}} kids card">
+<!-- asucend kids layout (Little Explorers, 6-8). Parent-run profiles only: no links, photos or locations.
      Theme colours, fonts and scene are filled in by scripts/card.py; text is escaped there. -->
 <defs>
   <clipPath id="card-clip"><rect width="1080" height="1350" rx="44"/></clipPath>

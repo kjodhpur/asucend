@@ -70,7 +70,7 @@ def operation(args):
 
 
 def parser():
-    p=argparse.ArgumentParser(description='ASUcend optional settings')
+    p=argparse.ArgumentParser(description='asucend optional settings')
     p.add_argument('--sample',action='store_true',help='Read demo state without mutations')
     p.add_argument('--profile',help="Whose settings: 'me' (default) or a child's nickname")
     sub=p.add_subparsers(dest='command')

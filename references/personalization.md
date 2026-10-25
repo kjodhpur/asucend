@@ -1,6 +1,6 @@
 # Optional extras: features, game voice and storylines
 
-Read this when the student wants to gamify ASUcend, change how Cubbie sounds, or turn something on or off. Every extra is **off by default**, can be changed any time, and turning extras off never erases earned XP.
+Read this when the student wants to gamify asucend, change how Cubbie sounds, or turn something on or off. Every extra is **off by default**, can be changed any time, and turning extras off never erases earned XP.
 
 ## Feature switches
 

@@ -1,10 +1,10 @@
-# ASUcend: a Cubbie Skill for ASU students
+# asucend: a Cubbie Skill for ASU students
 
-ASUcend turns ASU campus life into a gentle, real-world RPG inside Cubbie's messages. Real, verified ASU events become quests. Students opt in to XP, medals, a game-style voice and themed weekly player cards. Student parents, older siblings and tutors can also run separate, parent-confirmed homework quests for a child (ages 6-17), with reward cards designed for each age group.
+asucend turns ASU campus life into a gentle, real-world RPG inside Cubbie's messages. Real, verified ASU events become quests. Students opt in to XP, medals, a game-style voice and themed weekly player cards. Student parents, older siblings and tutors can also run separate, parent-confirmed homework quests for a child (ages 6-17), with reward cards designed for each age group.
 
 **Install in Cubbie:** text https://github.com/kjodhpur/asucend to Cubbie, approve the install, then send:
 
-> Start ASUcend. I'm an ASU student interested in AI, shy, and only free Friday afternoons. Find my first free quest.
+> Start asucend. I'm an ASU student interested in AI, shy, and only free Friday afternoons. Find my first free quest.
 
 No app, server, database, wallet or paid rewards. Cubbie handles browsing, Calendar, reminders, memory and messaging; small standard-library Python scripts keep the game state and draw the cards.
 

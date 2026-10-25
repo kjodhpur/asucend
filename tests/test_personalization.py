@@ -69,7 +69,7 @@ class Personalization(unittest.TestCase):
             src=out.read_text()
             ET.fromstring(src)
             s.append(src)
-            self.assertIn('ASUCEND',src)
+            self.assertIn('asucend',src)
             self.assertNotIn('example.org',src)
             self.assertIn('YOUR SKILL TREE',src)
         self.assertEqual(len(set(s)),6)

@@ -1,11 +1,11 @@
 ---
 name: asucend
-description: ASUcend turns ASU campus life into a real-world RPG with verified event quests, XP, medals and themed weekly player cards. Use for Arizona State University students who want to make friends, explore campus, get involved, build a career network, or check ASUcend quests, levels, medals or progress, including shy students or those with little free time. Also use when a student who is a parent, older sibling or tutor wants parent-run homework and chore quests with age-appropriate reward cards for a child (ages 6-17).
+description: asucend turns ASU campus life into a real-world RPG with verified event quests, XP, medals and themed weekly player cards. Use for Arizona State University students who want to make friends, explore campus, get involved, build a career network, or check asucend quests, levels, medals or progress, including shy students or those with little free time. Also use when a student who is a parent, older sibling or tutor wants parent-run homework and chore quests with age-appropriate reward cards for a child (ages 6-17).
 ---
 
-# ASUcend: level up your life at ASU
+# asucend: level up your life at ASU
 
-ASUcend is a Cubbie Skill, not an app, server or web dashboard. Everything happens in Cubbie's messages. Small standard-library Python scripts keep the game state and draw reward cards; Cubbie does the browsing, calendar, reminders, memory and messaging.
+asucend is a Cubbie Skill, not an app, server or web dashboard. Everything happens in Cubbie's messages. Small standard-library Python scripts keep the game state and draw reward cards; Cubbie does the browsing, calendar, reminders, memory and messaging.
 
 **Everything beyond basic event discovery is opt-in and individually reversible.** A student can get plain, factual event suggestions with no XP, narration, calendar access, reminders or cards.
 
